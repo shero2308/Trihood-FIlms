@@ -1,10 +1,22 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto , Kanit , Tangerine } from "next/font/google";
 import "./globals.css"; 
 
 
 const roboto = Roboto({
   variable: "--font-roboto",
+  subsets: ["latin"],
+});
+
+const kanit = Kanit({
+  variable: "--font-kanit",
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+});
+
+const tangerine = Tangerine({
+  variable: "--font-tangerine",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -21,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} antialiased`}
+        className={`${roboto.variable} ${kanit.variable} ${tangerine.variable} antialiased`}
       >
         {children}
       </body>
