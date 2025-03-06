@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #FFFFFF;
   --foreground: #0a0a0a;
 }
 
@@ -11,6 +11,7 @@
   --font-roboto: "Roboto", sans-serif;
   --font-kanit: "Kanit", sans-serif;
   --font-tangerine: "Tangerine", cursive;
+  --font-scope-one: "Scope One", serif;
 }
 
 /* @media (prefers-color-scheme: dark) {

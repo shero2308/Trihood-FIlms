@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto , Kanit , Tangerine } from "next/font/google";
+import { Roboto , Kanit , Tangerine , Scope_One } from "next/font/google";
 import "./globals.css"; 
 
 
@@ -20,6 +20,12 @@ const tangerine = Tangerine({
   subsets: ["latin"],
 });
 
+const scope_one = Scope_One({
+  variable: "--font-scope_one",
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Trihood Films",
   description: "Trihood Films is a film production company based in Delhi",
@@ -33,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${kanit.variable} ${tangerine.variable} antialiased`}
+        className={`${roboto.variable} ${kanit.variable} ${tangerine.variable} ${scope_one.variable} antialiased`}
       >
         {children}
       </body>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { link } from "fs";
 import { Button } from "@mui/material";
 
 export default function Navbar() {
@@ -13,14 +14,21 @@ export default function Navbar() {
 
     return ( 
         <div>
-            <div className='flex justify-between items-center py-2 gap-2 shadow-md bg-white'>  
+            <div className='flex justify-evenly items-center p-5'>  
                 { /*Logo*/ }
                 <div className='font-tangerine text-6xl pl-2'><Link href="/">Trihood Films</Link></div>
+                { /*Mobile Menu Icon*/ }
+
+                <div className='md:hidden flex gap-4 justify-center'>
+                <Button variant="outlined" size="medium" onClick={() => setIsOpen(!isOpen)}> 
+                    {isOpen ? <CloseIcon /> : <MenuIcon /> }
+                </Button>
+                </div>
 
                 { /*Desktop Nav Links*/ }
 
-                <div className='hidden md:flex gap-4'>
-                    <ul className='list-none flex gap-4 font-kanit text-blue-600 pr-2'>
+                <div className='hidden md:flex pt-20'>
+                    <ul className='list-none flex gap-10 font-kanit text-blue-600 pr-2'>
                         {navLinks.map((link) => (
                             <li key={link.href} className="hover:text-black">
                                 <Link className={`link ${pathname === link.href ? "text-black":"text-blue-600"}`} href={link.href}>{link.label}</Link>
@@ -28,14 +36,20 @@ export default function Navbar() {
                         ))}
                     </ul>
                 </div>
-                    { /*Mobile Nav Links-----Complete This */ }
-                <div className='md:hidden flex gap-4'>
-                    <Button onClick={() => setIsOpen(!isOpen)}> 
-                        {isOpen ? <CloseIcon /> : <MenuIcon />}
-                    </Button>    
-
-                </div>
             </div>
+            { /*Mobile Nav Links */ }
+                <div className='md:hidden flex gap-4 justify-center items-center'>
+                    {isOpen && (
+                        <ul className="flex flex-col gap-20 font-kanit text-blue-600 pt-5 text-3xl">
+                            {navLinks.map((link) => (
+                                 <li key={link.href} className="hover:text-black">
+                                 <Link className={`link ${pathname === link.href ? "text-black":"text-blue-600"}`} href={link.href}>{link.label}</Link>
+
+                             </li>
+                            ))}
+                        </ul>    
+                    )}  
+                </div>
         </div>
     );
 }
