@@ -37,7 +37,7 @@ export default function Home() {
           <p className="font-kanit text-xl text-gray-700 mt-6">Ad Film Makers & Digital Marketing Partner.</p>
           <p className="font-kanit text-xl text-gray-700">Video Stories & Website Development for your Brand.</p>
           <div className="flex mt-6">
-            <Link href="/contact"><Button variant="outlined" size="large" className="bg-blue-600 text-white">Get in touch <TelegramIcon/> </Button></Link>
+            <Link href="/contact"><Button variant="outlined" size="large">Get in touch <TelegramIcon/> </Button></Link>
           </div>
         </motion.div>
       </div>
