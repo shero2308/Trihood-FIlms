@@ -14,7 +14,7 @@ export default function Navbar() {
 
     return ( 
         <div>
-            <div className='flex justify-evenly items-center p-5'>  
+            <div className='flex justify-evenly items-center'>  
                 { /*Logo*/ }
                 <div className='font-tangerine text-6xl pl-2'><Link href="/">Trihood Films</Link></div>
                 { /*Mobile Menu Icon*/ }
@@ -27,7 +27,7 @@ export default function Navbar() {
 
                 { /*Desktop Nav Links*/ }
 
-                <div className='hidden md:flex pt-20'>
+                <div className='hidden md:flex pt-10'>
                     <ul className='list-none flex gap-10 font-kanit text-blue-600 pr-2'>
                         {navLinks.map((link) => (
                             <li key={link.href} className="hover:text-black">
@@ -40,7 +40,7 @@ export default function Navbar() {
             { /*Mobile Nav Links */ }
                 <div className='md:hidden flex gap-4 justify-center items-center'>
                     {isOpen && (
-                        <ul className="flex flex-col gap-20 font-kanit text-blue-600 pt-5 text-3xl">
+                        <ul className="flex flex-col gap-15 font-kanit text-blue-600 pt-5 text-2xl">
                             {navLinks.map((link) => (
                                  <li key={link.href} className="hover:text-black">
                                  <Link className={`link ${pathname === link.href ? "text-black":"text-blue-600"}`} href={link.href}>{link.label}</Link>

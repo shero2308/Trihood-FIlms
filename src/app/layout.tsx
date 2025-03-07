@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto , Kanit , Tangerine , Scope_One } from "next/font/google";
+import { Roboto , Kanit , Tangerine , Scope_One , Bree_Serif } from "next/font/google";
 import "./globals.css"; 
 
 
@@ -26,6 +26,12 @@ const scope_one = Scope_One({
   subsets: ["latin"],
 });
 
+const bree_serif = Bree_Serif({
+  variable: "--font-bree_serif",
+  weight: ["400"],
+  subsets: ["latin"],
+}); 
+
 export const metadata: Metadata = {
   title: "Trihood Films",
   description: "Trihood Films is a film production company based in Delhi",
@@ -39,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.variable} ${kanit.variable} ${tangerine.variable} ${scope_one.variable} antialiased`}
+        className={`${roboto.variable} ${kanit.variable} ${tangerine.variable} ${scope_one.variable} ${bree_serif.variable} antialiased`}
       >
         {children}
       </body>
