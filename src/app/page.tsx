@@ -67,6 +67,13 @@ export default function Home() {
           </p>
       </motion.div>
     </div>
+    <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}  
+        transition={{ duration: 0.8,
+                      delay: 0.2,
+                      ease: [0, 0.71, 0.2, 1.01]}}
+                      >
     <div className="flex flex-col sm:flex-row justify-center items-center px-6 sm:px-12 lg:px-20 py-6 sm:py-10 lg:py-14 gap-8 sm:gap-12">
       <div className="flex flex-col justify-center items-center w-full sm:w-1/3 text-center transition delay-150
                        duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
@@ -96,6 +103,7 @@ export default function Home() {
            </p>
       </div>
     </div>
+    </motion.div>
     </div>
   );
 }
