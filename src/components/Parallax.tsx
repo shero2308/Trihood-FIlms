@@ -20,8 +20,7 @@ export default function Parallax() {
         >
           <Image 
             src={bgImage} 
-            alt="Parallax Background" 
-            objectFit="cover" 
+            alt="Parallax Background"  
             className="opacity-80"
           />
         </motion.div>
