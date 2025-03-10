@@ -1,5 +1,9 @@
+
+//components
 import Navbar from "@/components/Navbar";
 import Social_links from "@/components/Social_links";
+import Parallax from "@/components/Parallax";
+
 import Image from "next/image";
 import * as motion from "motion/react-client"
 import { Button } from "@mui/material";
@@ -11,6 +15,7 @@ import scripted_content from "@/assets/scripted_content.png";
 import cenemetic from "@/assets/cenemetic.png";
 import target_audience from "@/assets/target_audience.png";
 import homepic from "@/assets/homepic.png";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -104,6 +109,10 @@ export default function Home() {
       </div>
     </div>
     </motion.div>
+    <div className="pt-20">
+      <Parallax />
+      <Footer/>
+    </div>
     </div>
   );
 }

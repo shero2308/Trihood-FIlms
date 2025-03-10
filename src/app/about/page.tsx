@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
+import Parallax from "@/components/Parallax";
 import Social_links from "@/components/Social_links";
+import Footer from "@/components/Footer";
 
 
 export default function About() {
@@ -7,6 +9,8 @@ export default function About() {
         <div>
             <Social_links />
             <Navbar />
+            <Parallax />
+            <Footer />
         </div>
     );
 }   
