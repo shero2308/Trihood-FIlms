@@ -44,7 +44,7 @@ export default function Home() {
             animate={{ opacity: 1, x: 1 }}
             transition={{ transition}}>
           <p className="font-kanit text-4xl">Digital Transformation Catalyst</p>
-          <p className="font-scope_one text-2xl italic text-gray-700 mt-4">"The Most Powerful element in advertising is the truth! — Bill Bernbach"</p>
+          <p className="font-scope_one text-2xl italic text-gray-700 mt-4">&quot;The Most Powerful element in advertising is the truth! — Bill Bernbach&quot;</p>
           <p className="font-kanit text-xl text-gray-700 mt-6">Ad Film Makers & Digital Marketing Partner.</p>
           <p className="font-kanit text-xl text-gray-700">Video Stories & Website Development for your Brand.</p>
           <div className="flex mt-6">
@@ -95,7 +95,7 @@ export default function Home() {
         <h3 className="font-kanit text-2xl">Targeted Audience</h3>
         <p className="font-bree-serif italic mt-4 text-gray-600 leading-relaxed px-4 sm:px-0">
           Social media today is a great tool to grow your business and get potential reach. We have target sets
-          which deliver's your Commercial Ad Video content only to people who needs your service.
+          which deliver&apos;s your Commercial Ad Video content only to people who needs your service.
           </p>
       </div>
       <div className="flex flex-col justify-center items-center w-full sm:w-1/3 text-center transition delay-150
@@ -103,7 +103,7 @@ export default function Home() {
         <Image src={cenemetic} alt="Scripted Content" width={300} height={70} className="mb-4"/>
         <h3 className="font-kanit text-2xl">Cinematic Essence</h3>
         <p className="font-bree-serif italic mt-4 text-gray-600 px-4 sm:px-0">
-          Ad Film Video with great Cinematic shots, binds viewers with your brand's video story. Drone, 4k Camera
+          Ad Film Video with great Cinematic shots, binds viewers with your brand&apos;s video story. Drone, 4k Camera
            is used to create a Motion Graphic Content. Ad Film Videos in Ranchi to Create Engaging Content.
            </p>
       </div>
