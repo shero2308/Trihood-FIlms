@@ -8,7 +8,6 @@ import * as motion from "motion/react-client"
 
 // image
 import about from "@/assets/about.jpg";
-import { WidthFull } from "@mui/icons-material";
 
 export default function About() {
 
