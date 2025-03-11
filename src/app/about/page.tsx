@@ -23,7 +23,7 @@ export default function About() {
             <Social_links />
             <Navbar />
             <div className="flex items-center flex-col p-4 pt-20 ">
-                <h1 className="font-kanit text-4xl lg:pr-200">About us</h1> 
+                <h1 className="font-kanit text-xl lg:pr-200">About us</h1> 
                 <h1 className="font-bree-serif text-2xl lg:pr-200">Trihood Films Pvt. Ltd.</h1> 
             </div>
             <motion.div

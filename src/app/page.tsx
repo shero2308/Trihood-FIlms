@@ -3,6 +3,7 @@
 import Navbar from "@/components/Navbar";
 import Social_links from "@/components/Social_links";
 import Parallax from "@/components/Parallax";
+import Footer from "@/components/Footer";
 
 import Image from "next/image";
 import * as motion from "motion/react-client"
@@ -15,8 +16,6 @@ import scripted_content from "@/assets/scripted_content.png";
 import cenemetic from "@/assets/cenemetic.png";
 import target_audience from "@/assets/target_audience.png";
 import homepic from "@/assets/homepic.png";
-import Footer from "@/components/Footer";
-
 
 export default function Home() {
   const transition = {
