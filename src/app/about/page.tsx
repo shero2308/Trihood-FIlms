@@ -40,7 +40,7 @@ export default function About() {
             <div className="flex items-center flex-col px-5 sm:px-5 lg:px-55 pt-10 font-bree-serif italic text-sm sm:text-sm lg:text-2xl mt-0 lg:mt-3 text-gray-700 text-justify">
                 <p>
                 Established in 2019 in Delhi, Cybertize Media Productions Pvt. Ltd. is a company built on strong
-                 ideals and a clear objective, essential elements for success in today's market. With its outstanding 
+                 ideals and a clear objective, essential elements for success in today&apos;s market. With its outstanding 
                  video production and animated ads, the company has achieved consistent growth and expanded its client 
                  base since its founding.
                 </p>
@@ -74,8 +74,8 @@ export default function About() {
                 </p>
                 <p className="font-bree-serif italic text-sm lg:text-2xl mt-2 lg:mt-10 text-gray-700 text-justify">
                     <p className="font-bold">Cybertize Media Productions was Founded in 2019, currenty providing —</p>
-                    Films & Video Production House Service in New Delhi, South Delhi, North Delhi, Nirman vihar, Ghaziabad, Gurugram, Dwarka, Noida, Noida Sector, Connaught Place, Rajiv Chowk. 
-                    Saket, Huda City Center, Okhla, Noida City Center, Anand Vihar, Kalkaji, Kashmere Gate and all over Delhi & Delhi NCR.
+                    Films & Video Production House Service in New Delhi, South Delhi, North Delhi, Nirman vihar, Ghaziabad, Gurugram, Dwarka, Noida, Noida Sector, Connaught Place,
+                    Rajiv Chowk. Saket, Huda City Center, Okhla, Noida City Center, Anand Vihar, Kalkaji, Kashmere Gate and all over Delhi & Delhi NCR.
                 </p>
             </div>
             <div className="pt-25"><Parallax /></div>
