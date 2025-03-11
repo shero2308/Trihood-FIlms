@@ -22,6 +22,7 @@ export default function Footer() {
           <li><Link href="/about" className="hover:text-blue-400">About</Link></li>
           <li><Link href="/services" className="hover:text-blue-400">Services</Link></li>
           <li><Link href="/portfolio" className="hover:text-blue-400">Portfolio</Link></li>
+          <li><Link href="/publishing-platform" className="hover:text-blue-400">Publishing Platform</Link></li>
           <li><Link href="/contact" className="hover:text-blue-400">Contact</Link></li>
         </ul>
 
@@ -29,7 +30,7 @@ export default function Footer() {
         <div className="flex gap-4 mt-4 sm:mt-0">
           <Link href="https://facebook.com" target="_blank"><FacebookIcon className="text-xl hover:text-blue-500" /></Link>
           <Link href="https://instagram.com" target="_blank"><InstagramIcon className="text-xl hover:text-pink-500" /></Link>
-          <Link href="https://twitter.com" target="_blank"><XIcon className="text-xl hover:text-black" /></Link>
+          <Link href="https://twitter.com" target="_blank"><XIcon className="text-xl hover:text-gray-500" /></Link>
           <Link href="https://youtube.com" target="_blank"><YouTubeIcon className="text-xl hover:text-red-500" /></Link>
           <Link href="https://youtube.com" target="_blank"><LinkedInIcon className="text-xl hover:text-blue-500" /></Link>
         </div>

@@ -9,6 +9,10 @@ export default function About() {
         <div>
             <Social_links />
             <Navbar />
+            <div>
+                <h1>About</h1>  
+                
+            </div>
             <Parallax />
             <Footer />
         </div>
