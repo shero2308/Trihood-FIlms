@@ -34,8 +34,9 @@ export default function Home() {
       <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 1 }}
-            transition={{ transition}}>
-        <Image src={homepic} alt="Home Picture" width={700} height={500} className=""/>
+            transition={{ transition}}
+            className="flex justify-center items-center">
+        <Image src={homepic} alt="Home Picture" className="w-400 h-40 lg:w-400 lg:h-150"/>
         </motion.div>
       </div>
 

@@ -19,8 +19,7 @@ export default function Multilayer_parallax() {
         className="w-full h-screen overflow-hidden relative grid place-items-center">
             <motion.h1 
             style={{ y: textY }}
-            className="text-7xl font-kanit relative pb-80 z-10">
-                Multilayer Parallax
+            className="text-8xl font-kanit relative sm:px-40 pb-80 z-10"> Parallax
             </motion.h1>
             <motion.div 
                 style={{ y: backgroundY }}
