@@ -29,7 +29,7 @@ export default function Services() {
             <Social_links />
             <Navbar />
             <div className="flex items-center flex-col pt-20">
-                <h1 className="font-kanit text-xl lg:text-5xl">
+                <h1 className="font-kanit text-xl lg:text-5xl mt-14">
                     Services
                 </h1>
             </div>
