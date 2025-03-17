@@ -44,20 +44,7 @@ export default function Services() {
                         #1. Video Production
                     </h1>
                     <p className="font-scope-one mt-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
+                        {lorem}
                     </p>
                 </motion.div>
                 <motion.div 
@@ -79,20 +66,7 @@ export default function Services() {
                         #1. Video Production
                     </h1>
                     <p className="font-scope-one mt-6">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
+                        {lorem}
                     </p>
                 </motion.div>
                 <motion.div 
@@ -110,3 +84,5 @@ export default function Services() {
         </div>
     );
 }   
+
+const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget felis fermentum aliquet"
