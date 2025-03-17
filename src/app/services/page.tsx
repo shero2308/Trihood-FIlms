@@ -39,62 +39,6 @@ export default function Services() {
                 <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
                 </div>
             </div>
-            <div className="flex flex-row item center pt-20 px-40">
-            <div className="flex flex-col w-1/2">               
-                <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
-                </div>
-                <div className="flex flex-col w-1/2 px-10">               
-                    <h1 className="font-bree-serif text-5xl">
-                        #1 Ad Film Makers
-                    </h1>
-                    <p className="font-scope-one mt-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                    </p>
-                </div>
-            </div>
-            <div className="flex flex-row item center pt-20 px-40">
-                <div className="flex flex-col w-1/2">               
-                    <h1 className="font-bree-serif text-5xl">
-                        #1 Ad Film Makers
-                    </h1>
-                    <p className="font-scope-one mt-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                    </p>
-                </div>
-                <div className="flex flex-col w-1/2">               
-                <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
-                </div>
-            </div>
-            <div className="flex flex-row item center pt-20 px-40">
-            <div className="flex flex-col w-1/2">               
-                <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
-                </div>
-                <div className="flex flex-col w-1/2 px-10">               
-                    <h1 className="font-bree-serif text-5xl">
-                        #1 Ad Film Makers
-                    </h1>
-                    <p className="font-scope-one mt-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                    </p>
-                </div>
-            </div>
-            <div className="flex flex-row item center pt-20 px-40">
-                <div className="flex flex-col w-1/2">               
-                    <h1 className="font-bree-serif text-5xl">
-                        #1 Ad Film Makers
-                    </h1>
-                    <p className="font-scope-one mt-6">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis fuga nulla quo minus?
-                         Voluptatem voluptas iste molestias quas ad labore, aliquam sunt adipisci explicabo reiciendis tempora, provident deserunt ut facere!
-                    </p>
-                </div>
-                <div className="flex flex-col w-1/2">               
-                <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
-                </div>
-            </div>
             <div className="pt-20"><Parallax /></div>
             <Footer/>
         </div>

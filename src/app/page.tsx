@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Social_links from "@/components/Social_links";
 import Parallax from "@/components/Parallax";
 import Footer from "@/components/Footer";
+import Mulltilayer_parallax from "@/components/Multilayer_parallax";
 
 import Image from "next/image";
 import * as motion from "motion/react-client"
@@ -27,11 +28,12 @@ export default function Home() {
     <div>
       <Social_links />
       <Navbar />
+      <Mulltilayer_parallax />  
       <div className="flex justify-center items-center md:flex-row flex-col">  
       <div className="flex justify-center items-center w-1/2 md:pt-10 lg:pt-20">
       <motion.div
             initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 1 }}
+            whileInView={{ opacity: 1, x: 1 }}
             transition={{ transition}}>
         <Image src={homepic} alt="Home Picture" width={700} height={500} className=""/>
         </motion.div>
@@ -40,7 +42,7 @@ export default function Home() {
       <div className="flex justify-center w-1/2 md:pt-20">
         <motion.div
             initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 1 }}
+            whileInView={{ opacity: 1, x: 1 }}
             transition={{ transition}}>
           <p className="font-kanit text-4xl">Digital Transformation Catalyst</p>
           <p className="font-scope_one text-2xl italic text-gray-700 mt-4">&quot;The Most Powerful element in advertising is the truth! — Bill Bernbach&quot;</p>
@@ -55,7 +57,7 @@ export default function Home() {
       <div className="flex flex-col sm:flex-row justify-center items-center px-10 sm:px-10 lg:px-16 py-4 sm:py-8 lg:py-12">
       <motion.div
         initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, x: 1 }}  
+        whileInView={{ opacity: 1, x: 1 }}  
         transition={{ duration: 0.8,
                       delay: 0.2,
                       ease: [0, 0.71, 0.2, 1.01]}}
