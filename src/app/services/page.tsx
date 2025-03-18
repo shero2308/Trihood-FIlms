@@ -33,7 +33,7 @@ export default function Services() {
                     Services
                 </h1>
             </div>
-            <div className="w-full h-screen flex flex-col-reverse lg:flex-row items-center justify-center gap-10 pt-16 px-6 md:px-16 lg:px-40">
+            <div className=" flex flex-col-reverse lg:flex-row items-center justify-center gap-10 pt-16 px-6 md:px-16 lg:px-40">
                 <motion.div 
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 1 }}
@@ -52,10 +52,10 @@ export default function Services() {
                     whileInView={{ opacity: 1, x: 1 }}
                     transition={{ transition}}
                 className="flex flex-col w-1/2">               
-                <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
+                <Image src={about} alt="about" height={1000} width={1200} style={imageStyle}/>
                 </motion.div>
             </div>
-            <div className=" w-full h-screen flex flex-col-reverse lg:flex-row items-center justify-center gap-10 pt-16 px-6 md:px-16 lg:px-40">
+            <div className=" flex flex-col-reverse lg:flex-row items-center justify-center gap-10 pt-16 px-6 md:px-16 lg:px-40">
                 <motion.div 
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 1, x: 1 }}
@@ -79,7 +79,7 @@ export default function Services() {
             </div>
    
    
-            <div className="pt-20"><Parallax /></div>
+            <div className="pt-40"><Parallax /></div>
             <Footer/>
         </div>
     );
