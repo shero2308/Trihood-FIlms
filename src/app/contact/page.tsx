@@ -10,6 +10,11 @@ export default function Contact() {
         <div>
             <Social_links />
             <Navbar />
+            <div className="flex items-center flex-col pt-20">
+                <h1 className="font-kanit text-xl lg:text-5xl mt-14">
+                    Contact Us
+                </h1>
+            </div>
             <div className="pt-20">
                 <Parallax />
                 <Footer/>

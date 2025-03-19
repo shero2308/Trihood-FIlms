@@ -6,6 +6,7 @@ import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from "@mui/material";
+import { BorderBottomOutlined } from "@mui/icons-material";
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -39,15 +40,16 @@ export default function Navbar() {
             { /*Mobile Nav Links */ }
                 <div className='md:hidden flex gap-4 justify-center items-center'>
                     {isOpen && (
-                        <ul className="flex flex-col gap-15 font-kanit text-blue-600 pt-5 text-2xl">
+                        <ul className="flex flex-col gap-15 justify-center items-center font-kanit text-blue-600 pt-5 text-2xl">
                             {navLinks.map((link) => (
-                                 <li key={link.href} className="hover:text-black">
+                                 <li key={link.href} className="hover:text-black justify-center">
                                  <Link className={`link ${pathname === link.href ? "text-black":"text-blue-600"}`} href={link.href}>{link.label}</Link>
 
                              </li>
                             ))}
                         </ul>    
                     )}  
+                  
                 </div>
         </div>
     );

@@ -55,7 +55,7 @@ export default function Publishing_platform() {
                     transition={{ duration: 0.8,
                                   delay: 1.0,
                                   ease: [0, 0.71, 0.2, 1.01]}} 
-                    className="flex items-baseline gap-10 px-4 md:px-10 lg:px-20 mt-10">
+                    className="flex items-center flex-col sm:flex-row justify-center gap-10 px-4 md:px-10 lg:px-20 mt-10">
                     <Image src={Youtube} alt="youtube" height={130} width={130} className="rounded-lg transition delay-150
                      duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer"/>
                     <Image src={Facebook} alt="facebook" height={130} width={130} className="rounded-lg transition delay-150
