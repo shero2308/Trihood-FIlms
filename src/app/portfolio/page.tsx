@@ -37,7 +37,8 @@ export default function Portfolio() {
             {/* Video Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-10 lg:px-20 mt-10">
                 {Youtube_link.map((link, index) => (
-                    <div key={index} className="flex justify-center">
+                    <div key={index} className="flex justify-center transition delay-150
+                     duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                         <iframe 
                             src={link}
                             width="100%" 
