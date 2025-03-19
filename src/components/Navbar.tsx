@@ -6,7 +6,6 @@ import { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Button } from "@mui/material";
-import { BorderBottomOutlined } from "@mui/icons-material";
 
 export default function Navbar() {
     const pathname = usePathname();
