@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import EmailIcon from '@mui/icons-material/Email';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
+import BusinessIcon from '@mui/icons-material/Business';
 
 export default function Contact() {
     return ( 
@@ -43,7 +43,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col items-center gap-1">
                     <h1 className="font-bree-serif text-gray-800">Address:</h1>
-                    <p className="font-kanit text-gray-600">XYZ Street, ABC City, Country</p>
+                    <p className="font-kanit text-gray-600"><BusinessIcon/> XYZ Street, ABC City, Country</p>
                 </div>
                 </div>
                 </div>
