@@ -7,14 +7,8 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 
 const Youtube_link = [
     "https://www.youtube.com/embed/itli8isoXQQ",
-    "https://www.youtube.com/embed/7168SXKS0_c?si=Xin7aD2Q4ELjsRxU",
-    "https://www.youtube.com/embed/UVeloGznItU?si=RBpZ8z1EDDVp7Att",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "https://www.youtube.com/embed/7168SXKS0_c",
+    "https://www.youtube.com/embed/UVeloGznItU",
 ];
 
 export default function Portfolio() {
