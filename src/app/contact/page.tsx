@@ -23,16 +23,16 @@ export default function Contact() {
 
     const [result, setResult] = useState("");
 
-    const handleChange = (event) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
-
-    const onSubmit = async (event) => {
+    
+    const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!formData.name || !formData.email || !formData.subject || !formData.message) {
             setResult("Please fill in all fields.");
             return;
-        }
+        }    
 
         setResult("Sending...");
 
