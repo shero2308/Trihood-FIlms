@@ -5,6 +5,7 @@ import Social_links from "@/components/Social_links";
 import Parallax from "@/components/Parallax";
 import Footer from "@/components/Footer";
 import Mulltilayer_parallax from "@/components/Multilayer_parallax";
+import Preloader from "@/components/Preloader";
 
 import Image from "next/image";
 import * as motion from "motion/react-client"
@@ -26,6 +27,7 @@ export default function Home() {
   }
   return (
     <div>
+      <Preloader />
       <Social_links />
       <Navbar />
       <Mulltilayer_parallax />  
