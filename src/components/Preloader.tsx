@@ -8,7 +8,7 @@ const Preloader: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500); // 2.5 seconds
+    const timer = setTimeout(() => setLoading(false), 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,13 +23,13 @@ const Preloader: React.FC = () => {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black text-white"
         >
           <motion.h1
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl font-bold tracking-widest animate-pulse"
+            initial={{ y: 100, opacity: 0 }} // start below
+            animate={{ y: 0, opacity: 1 }}   // slide up and fade in
+            exit={{ y: -50, opacity: 0 }}    // exit upward and fade
+            transition={{ duration: 1 }}
+            className="text-4xl font-bold tracking-widest"
           >
-            TRIHOODFILMS
+            TRIHOOD FILMS
           </motion.h1>
         </motion.div>
       )}
