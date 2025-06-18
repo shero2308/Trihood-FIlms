@@ -1,7 +1,6 @@
 
 //components
 import Navbar from "@/components/Navbar";
-import Social_links from "@/components/Social_links";
 import Parallax from "@/components/Parallax";
 import Footer from "@/components/Footer";
 import Mulltilayer_parallax from "@/components/Multilayer_parallax";
