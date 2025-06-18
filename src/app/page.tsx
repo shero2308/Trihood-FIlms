@@ -28,7 +28,6 @@ export default function Home() {
   return (
     <div>
       <Preloader />
-      <Social_links />
       <Navbar />
       <Mulltilayer_parallax />  
       <div className="flex justify-center items-center md:flex-row flex-col">  
