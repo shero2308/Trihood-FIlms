@@ -1,64 +1,121 @@
-"use client" // This is a client-side component
+"use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import { Button } from "@mui/material";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/assets/trihood-logo.jpeg"; // adjust path if needed
 
-export default function Navbar() {
-    const pathname = usePathname();
-    const [isOpen, setIsOpen] = useState(false);
 
-    return ( 
-        <div>
-            <div className='flex justify-evenly items-center'>  
-                { /*Logo*/ }
-                <div className='font-tangerine text-6xl pl-2'><Link href="/">Trihood Films</Link></div>
-                { /*Mobile Menu Icon*/ }
-
-                <div className='md:hidden flex gap-4 justify-center'>
-                <Button variant="outlined" size="medium" onClick={() => setIsOpen(!isOpen)}> 
-                    {isOpen ? <CloseIcon /> : <MenuIcon /> }
-                </Button>
-                </div>
-
-                { /*Desktop Nav Links*/ }
-
-                <div className='hidden md:flex pt-10'>
-                    <ul className='list-none flex gap-10 font-kanit text-blue-600 pr-2'>
-                        {navLinks.map((link) => (
-                            <li key={link.href} className="hover:text-black">
-                                <Link className={`link ${pathname === link.href ? "text-black":"text-blue-600"}`} href={link.href}>{link.label}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-            { /*Mobile Nav Links */ }
-                <div className='md:hidden flex gap-4 justify-center items-center'>
-                    {isOpen && (
-                        <ul className="flex flex-col gap-15 justify-center items-center font-kanit text-blue-600 pt-5 text-2xl">
-                            {navLinks.map((link) => (
-                                 <li key={link.href} className="hover:text-black justify-center">
-                                 <Link className={`link ${pathname === link.href ? "text-black":"text-blue-600"}`} href={link.href}>{link.label}</Link>
-
-                             </li>
-                            ))}
-                        </ul>    
-                    )}  
-                  
-                </div>
-        </div>
-    );
-}
-
-const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About us" },
-    { href: "/services", label: "Services" },
-    { href: "/portfolio", label: "Portfolio" },
-    { href: "/publishing-platforms", label: "Publishing Platforms" },
-    { href: "/contact", label: "Contact us" },
+const NAV_ITEMS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About us" },
+  { href: "/services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/publishing-platforms", label: "Publishing Platforms" },
+  { href: "/contact", label: "Contact us" },
 ];
+
+const Navbar: React.FC = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Delay navbar only on homepage
+    if (pathname === "/") {
+      const timer = setTimeout(() => setShowNavbar(true), 3500);
+      return () => clearTimeout(timer);
+    } else {
+      // Show immediately on other routes
+      setShowNavbar(true);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  if (!showNavbar) return null;
+
+  return (
+        <header className={`fixed top-0 w-full z-50 transition-colors ${
+                scrolled ? "bg-black shadow-md" : "bg-black"
+                }`}>
+      <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <Link href="/">
+           <Image
+                src={Logo}
+                alt="Trihood Films Logo"
+                width={150}
+                height={60}
+                className="object-contain  w-[140px] h-auto"
+                priority
+  />
+        </Link>
+
+        <ul className="hidden md:flex space-x-8">
+          {NAV_ITEMS.map(({ label, href }) => (
+            <li key={href}>
+              <Link
+                href={href}
+                className={`transition-colors ${
+                  pathname === href
+                    ? "text-blue-400 font-semibold"
+                    : "text-white hover:text-blue-400"
+                }`}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          className="md:hidden"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <div className="h-0.5 w-6 bg-white mb-1"></div>
+          <div className="h-0.5 w-6 bg-white mb-1"></div>
+          <div className="h-0.5 w-6 bg-white"></div>
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-gray-900 shadow-md overflow-hidden"
+          >
+            <ul className="flex flex-col p-4 space-y-4">
+              {NAV_ITEMS.map(({ label, href }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`block transition-colors ${
+                      pathname === href
+                        ? "text-blue-400 font-semibold"
+                        : "text-white hover:text-blue-400"
+                    }`}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+};
+
+export default Navbar;
