@@ -26,13 +26,13 @@ export default function Contact() {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
-    
+
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!formData.name || !formData.email || !formData.subject || !formData.message) {
             setResult("Please fill in all fields.");
             return;
-        }    
+        }
 
         setResult("Sending...");
 
@@ -70,11 +70,11 @@ export default function Contact() {
 
             {/* Contact Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 md:px-10 lg:px-20 pt-10">
-                
+
                 {/* Contact Details */}
                 <div className="flex flex-col items-center text-center">
                     <h1 className="font-bree-serif text-3xl">Contact Details</h1>
-                    
+
                     <div className="flex flex-col items-center gap-6 mt-6">
                         {/* Email */}
                         <div className="flex flex-col items-center">

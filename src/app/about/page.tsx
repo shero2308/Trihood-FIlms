@@ -16,43 +16,45 @@ export default function About() {
         border: '1px solid black',
         boxShadow: '0 0 20px black',
         margin: '10px',
-      };
+    };
 
-    return ( 
+    return (
         <div>
             <Social_links />
             <Navbar />
             <div className="flex items-center flex-col p-4 pt-20 ">
-                <h1 className="font-kanit text-xl">About us</h1> 
-                <h1 className="font-bree-serif text-2xl">Trihood Films Pvt. Ltd.</h1> 
+                <h1 className="font-kanit text-xl">About us</h1>
+                <h1 className="font-bree-serif text-2xl">Trihood Films Pvt. Ltd.</h1>
             </div>
             <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{opacity:1, scale: 1 }}
-            transition={{   duration: 0.8,
-                            delay: 0.2,
-                            ease: [0, 0.71, 0.2, 1.01]}}
-                            > 
-            <div className="flex items-center flex-col p-4">
-                <Image src={about} alt="about" height={800} width={1100} style={imageStyle}/>
-            |</div>
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.8,
+                    delay: 0.2,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }}
+            >
+                <div className="flex items-center flex-col p-4">
+                    <Image src={about} alt="about" height={800} width={1100} style={imageStyle} />
+                    |</div>
             </motion.div>
             <div className="flex items-center flex-col px-5 sm:px-5 lg:px-55 pt-10 font-bree-serif italic text-sm sm:text-sm lg:text-2xl mt-0 lg:mt-3 text-gray-700 text-justify">
                 <p>
-                Established in 2019 in Delhi, Cybertize Media Productions Pvt. Ltd. is a company built on strong
-                 ideals and a clear objective, essential elements for success in today&apos;s market. With its outstanding 
-                 video production and animated ads, the company has achieved consistent growth and expanded its client 
-                 base since its founding.
+                    Established in 2019 in Delhi, Cybertize Media Productions Pvt. Ltd. is a company built on strong
+                    ideals and a clear objective, essential elements for success in today&apos;s market. With its outstanding
+                    video production and animated ads, the company has achieved consistent growth and expanded its client
+                    base since its founding.
                 </p>
-                <p className="mt-10">Rapidly gaining recognition as a trailblazer in video production, Cybertize Media Productions has quickly 
-                    become synonymous with cutting-edge offerings that consistently elevate its brand presence. The company 
-                    stands out for its team of highly skilled and tech-savvy professionals who spare no effort in creating 
-                    luxurious video commercials for corporations, products, or services. Despite leveraging advanced video 
+                <p className="mt-10">Rapidly gaining recognition as a trailblazer in video production, Cybertize Media Productions has quickly
+                    become synonymous with cutting-edge offerings that consistently elevate its brand presence. The company
+                    stands out for its team of highly skilled and tech-savvy professionals who spare no effort in creating
+                    luxurious video commercials for corporations, products, or services. Despite leveraging advanced video
                     production technology, Cybertize Media remains committed to delivering exceptional results.
                 </p>
                 <p className="mt-10">
-                Cybertize Media specializes in a diverse range of content creation, including short video content, ad films,
-                 short films, 3D animation videos, 2D animation videos, brand storytelling videos, and corporate videos.
+                    Cybertize Media specializes in a diverse range of content creation, including short video content, ad films,
+                    short films, 3D animation videos, 2D animation videos, brand storytelling videos, and corporate videos.
                 </p>
             </div>
             <div className="flex items-center flex-col px-5 sm:px-5 lg:px-55">
