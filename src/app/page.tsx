@@ -5,6 +5,7 @@ import Parallax from "@/components/Parallax";
 import Footer from "@/components/Footer";
 import Mulltilayer_parallax from "@/components/Multilayer_parallax";
 import Preloader from "@/components/Preloader";
+import Hero from "@/components/Hero";
 
 import Image from "next/image";
 import * as motion from "motion/react-client"
@@ -28,6 +29,7 @@ export default function Home() {
     <div>
       <Preloader />
       <Navbar />
+      <Hero />
       <Mulltilayer_parallax />
       <div className="flex justify-center items-center md:flex-row flex-col">
         <div className="flex justify-center items-center w-1/2 md:pt-10 lg:pt-20">
