@@ -1,19 +1,16 @@
-// components/Preloader.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const Preloader: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [showText, setShowText] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    // Step 1: Show text after GIF (2s delay — adjust if needed)
-    const textTimer = setTimeout(() => setShowText(true), 2000); // ← match your GIF duration
-
-    // Step 2: End preloader after full animation (GIF + text)
-    const loadingTimer = setTimeout(() => setLoading(false), 3500); // ~GIF+text duration
+    const textTimer = setTimeout(() => setShowText(true), 2000);
+    const loadingTimer = setTimeout(() => setLoading(false), 3500);
 
     return () => {
       clearTimeout(textTimer);
@@ -31,14 +28,17 @@ const Preloader: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white"
         >
-          {/* 🔁 GIF Animation */}
-          <img
+          {/* ✅ Optimized GIF using next/image */}
+          <Image
             src="/loader.gif"
             alt="Loading..."
-            className="w-[100px] h-[100px] mb-6"
+            width={100}
+            height={100}
+            className="mb-6"
+            priority
           />
 
-          {/* ⏳ Delayed Text Animation */}
+          {/* ✨ Delayed Title Text */}
           {showText && (
             <motion.h1
               initial={{ y: 100, opacity: 0 }}
