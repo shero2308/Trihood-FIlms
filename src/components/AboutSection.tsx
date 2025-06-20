@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Eye, Target, MessageCircle } from "lucide-react";
@@ -10,7 +11,7 @@ const IconCard = ({
   description,
   delay,
 }: {
-  icon: JSX.Element;
+  icon: React.ReactNode;
   title: string;
   description: string;
   delay: number;
