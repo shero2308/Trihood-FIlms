@@ -122,7 +122,7 @@ const AboutUs = () => {
               {/* Social Links */}
               <div className="flex gap-4 mt-4">
                 <a
-                  href="https://instagram.com/rituraj.anand" // Replace with actual link
+                  href="https://instagram.com" // Replace with actual link
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-[#fdb713] transition-colors"
@@ -132,7 +132,7 @@ const AboutUs = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://facebook.com/rituraj.anand"
+                  href="https://facebook.com" // Replace with actual link
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-[#fdb713] transition-colors"
