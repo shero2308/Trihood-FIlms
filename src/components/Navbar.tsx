@@ -104,7 +104,10 @@ const Navbar: React.FC = () => {
                     sub.children ? (
                       // 👇 Each dropdown with children becomes a new group
                       <li key={sub.label} className="relative group/video">
-                        <div className="flex items-center justify-between px-3 py-1 cursor-pointer hover:text-[#fdb713]">
+                        <Link
+                          href={sub.href}
+                          className="flex items-center justify-between px-3 py-1 hover:text-[#fdb713] group-hover/video:text-[#fdb713] w-full"
+                        >
                           {sub.label}
                           <svg
                             className="w-2 h-2 ml-2 fill-white group-hover/video:fill-[#fdb713]"
@@ -112,8 +115,7 @@ const Navbar: React.FC = () => {
                           >
                             <path d="M0 0l6 5-6 5V0z" />
                           </svg>
-                        </div>
-
+                        </Link>
                         {/* Second-level submenu: show only on hover of the video group */}
                         <ul className="absolute top-0 left-full hidden group-hover/video:flex flex-col bg-black text-white p-2 rounded shadow-md space-y-1 min-w-[200px] z-50">
                           {sub.children.map((child) => (
