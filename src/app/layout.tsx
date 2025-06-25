@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto , Kanit , Tangerine , Scope_One , Bree_Serif } from "next/font/google";
-import "./globals.css"; 
+import {
+  Roboto,
+  Kanit,
+  Tangerine,
+  Scope_One,
+  Bree_Serif,
+} from "next/font/google";
+import "./globals.css";
 
+import LayoutClientWrapper from "@/components/LayoutClientWrapper"; // adjust path if needed
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -30,7 +37,7 @@ const bree_serif = Bree_Serif({
   variable: "--font-bree_serif",
   weight: ["400"],
   subsets: ["latin"],
-}); 
+});
 
 export const metadata: Metadata = {
   title: "Trihood Films",
@@ -47,7 +54,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${kanit.variable} ${tangerine.variable} ${scope_one.variable} ${bree_serif.variable} antialiased`}
       >
-        {children}
+        <LayoutClientWrapper>{children}</LayoutClientWrapper>
       </body>
     </html>
   );

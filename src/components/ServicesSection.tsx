@@ -1,79 +1,90 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 const services = [
   {
     title: "Video Production",
+    description: "From concept to screen—cinematic films, ads & visual storytelling.",
     image: "/services/video-production.png",
     link: "/services/video-production",
   },
   {
     title: "Social Media Marketing",
+    description: "Tailored strategy and content to grow your brand online.",
     image: "/services/social-media.jpg",
     link: "/services/social-media-marketing",
   },
   {
     title: "Communication Management",
+    description: "Clear, compelling communication across every platform.",
     image: "/services/communication.jpg",
     link: "/services/communication-management",
   },
   {
     title: "Strategic Planning",
+    description: "Creative direction and content planning that aligns with your goals.",
     image: "/services/strategy.jpg",
     link: "/services/strategic-planning",
   },
   {
     title: "Branding Solutions",
+    description: "Complete identity systems with a visual and narrative edge.",
     image: "/services/branding.jpg",
     link: "/services/branding-solutions",
   },
   {
     title: "Humanitarian Services",
+    description: "Impact-driven media for NGOs and social organizations.",
     image: "/services/humanitarian.jpg",
     link: "/services/humanitarian-services",
   },
 ];
 
-const ServicesSection = () => {
-  return (
-    <section className="bg-black text-white py-20 px-6">
-      <div className="max-w-7xl mx-auto text-center mb-14">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-yellow-400">
-          What We Offer
-        </h2>
-        <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-          Elevating brands through storytelling, visuals, and strategy.
-        </p>
-      </div>
+const ServicesSection = () => (
+  <section className="bg-black text-white font-[var(--font-roboto)]">
+    {services.map((service, index) => (
+      <Link key={index} href={service.link}>
+        <div
+          className="relative w-full h-screen bg-cover bg-center flex items-center justify-center overflow-hidden group"
+          style={{ backgroundImage: `url(${service.image})` }}
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="1000"
+          data-aos-delay={index * 100}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/60 z-10 transition-all duration-300 group-hover:bg-black/70" />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {services.map((service, index) => (
-          <Link key={index} href={service.link}>
-            <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-lg">
-              <div className="relative w-full h-60">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  priority={index === 0}
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-yellow-400">
-                  {service.title}
-                </h3>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </section>
-  );
-};
+          {/* Text Content */}
+          <div
+            className="relative z-20 max-w-3xl px-6 text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <h2 className="text-5xl sm:text-6xl font-bold text-yellow-400 font-[var(--font-bree_serif)] mb-6 drop-shadow-md">
+              {service.title}
+            </h2>
+            <p
+              className="text-lg sm:text-xl text-gray-300 font-[var(--font-scope_one)] mb-8"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              {service.description}
+            </p>
+            <span
+              className="inline-block text-yellow-300 text-sm font-[var(--font-kanit)] border-b border-yellow-300 hover:text-white hover:border-white transition-all duration-300"
+              data-aos="zoom-in"
+              data-aos-delay="700"
+            >
+              Learn More →
+            </span>
+          </div>
+        </div>
+      </Link>
+    ))}
+  </section>
+);
 
 export default ServicesSection;
