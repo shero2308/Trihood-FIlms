@@ -5,6 +5,10 @@
     --foreground: #ededed;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
