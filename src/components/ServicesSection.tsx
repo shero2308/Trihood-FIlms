@@ -15,31 +15,31 @@ const services = [
   {
     title: "Social Media Marketing",
     description: "Tailored strategy and content to grow your brand online.",
-    video: "/videos/social-media.mp4",
+    image: "/services/social-media.jpg",
     link: "/services/social-media-marketing",
   },
   {
     title: "Communication Management",
     description: "Clear, compelling communication across every platform.",
-    video: "/videos/communication.mp4",
+    image: "/services/communication.jpg",
     link: "/services/communication-management",
   },
   {
     title: "Strategic Planning",
     description: "Creative direction and content planning that aligns with your goals.",
-    video: "/videos/strategy.mp4",
+    image: "/services/strategy.jpg",
     link: "/services/strategic-planning",
   },
   {
     title: "Branding Solutions",
     description: "Complete identity systems with a visual and narrative edge.",
-    video: "/videos/branding.mp4",
+    image: "/services/branding.jpg",
     link: "/services/branding-solutions",
   },
   {
     title: "Humanitarian Services",
     description: "Impact-driven media for NGOs and social organizations.",
-    video: "/videos/humanitarian.mp4",
+    image: "/services/humanitarian.jpg",
     link: "/services/humanitarian-services",
   },
 ];
@@ -51,17 +51,7 @@ const fadeInVariant = {
 
 const ServicesSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(1); // 1-based index
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = window.innerWidth;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   const updateIndexOnScroll = () => {
     if (scrollRef.current) {
@@ -82,41 +72,57 @@ const ServicesSection = () => {
     }
   }, []);
 
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="relative">
-      {/* Scrollable Section */}
       <section
         ref={scrollRef}
         className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full scrollbar-hide"
       >
         {services.map((service, index) => {
-          const cardRef = useRef(null);
-          const inView = useInView(cardRef, { once: false });
+          const ref = useRef(null);
+          const inView = useInView(ref, { once: false });
 
           return (
             <Link key={index} href={service.link} passHref>
               <motion.div
-                ref={cardRef}
+                ref={ref}
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={fadeInVariant}
-                className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group"
+                className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group cursor-pointer"
               >
-                {/* Video Background */}
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover z-0"
-                >
-                  <source src={service.video} type="video/mp4" />
-                </video>
+                {/* Background */}
+                {service.video ? (
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover z-0"
+                  >
+                    <source src={service.video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center z-0"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                  />
+                )}
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/60 z-10 group-hover:bg-black/70 transition-all duration-300" />
 
-                {/* Text Content */}
+                {/* Content */}
                 <div className="relative z-20 max-w-3xl px-6 text-center">
                   <h2 className="text-5xl sm:text-6xl font-bold text-yellow-400 font-[var(--font-bree_serif)] mb-6 drop-shadow-md">
                     {service.title}
@@ -134,28 +140,25 @@ const ServicesSection = () => {
         })}
       </section>
 
-     {/* Left Arrow - Hide on first slide */}
-{currentIndex > 1 && (
-  <button
-    className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/70 p-3 rounded-full border border-yellow-400 text-yellow-300"
-    onClick={() => scroll("left")}
-  >
-    <ChevronLeft size={28} />
-  </button>
-)}
+      {/* Conditional Arrows */}
+      {currentIndex > 1 && (
+        <button
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/70 p-3 rounded-full border border-yellow-400 text-yellow-300"
+          onClick={() => scroll("left")}
+        >
+          <ChevronLeft size={28} />
+        </button>
+      )}
+      {currentIndex < services.length && (
+        <button
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/70 p-3 rounded-full border border-yellow-400 text-yellow-300"
+          onClick={() => scroll("right")}
+        >
+          <ChevronRight size={28} />
+        </button>
+      )}
 
-{/* Right Arrow - Hide on last slide */}
-{currentIndex <services.length && (
-  <button
-    className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/70 p-3 rounded-full border border-yellow-400 text-yellow-300"
-    onClick={() => scroll("right")}
-  >
-    <ChevronRight size={28} />
-  </button>
-)}
-
-
-      {/* Custom Slide Indicator */}
+      {/* Page Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/60 text-yellow-300 text-sm px-4 py-1 rounded-full border border-yellow-400 font-[var(--font-kanit)]">
         {currentIndex} / {services.length}
       </div>
