@@ -53,6 +53,10 @@ const ServicesSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
 
+  // 👇 Refs for each card
+  const cardRefs = services.map(() => useRef(null));
+  const inViews = cardRefs.map((ref) => useInView(ref, { once: false }));
+
   const updateIndexOnScroll = () => {
     if (scrollRef.current) {
       const scrollLeft = scrollRef.current.scrollLeft;
@@ -88,59 +92,54 @@ const ServicesSection = () => {
         ref={scrollRef}
         className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth w-full scrollbar-hide"
       >
-        {services.map((service, index) => {
-          const ref = useRef(null);
-          const inView = useInView(ref, { once: false });
+        {services.map((service, index) => (
+          <Link key={index} href={service.link} passHref>
+            <motion.div
+              ref={cardRefs[index]}
+              initial="hidden"
+              animate={inViews[index] ? "visible" : "hidden"}
+              variants={fadeInVariant}
+              className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group"
+            >
+              {/* Background */}
+              {service.video ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                >
+                  <source src={service.video} type="video/mp4" />
+                </video>
+              ) : (
+                <div
+                  className="absolute inset-0 bg-cover bg-center z-0"
+                  style={{ backgroundImage: `url(${service.image})` }}
+                />
+              )}
 
-          return (
-            <Link key={index} href={service.link} passHref>
-              <motion.div
-                ref={ref}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={fadeInVariant}
-                className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group cursor-pointer"
-              >
-                {/* Background */}
-                {service.video ? (
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover z-0"
-                  >
-                    <source src={service.video} type="video/mp4" />
-                  </video>
-                ) : (
-                  <div
-                    className="absolute inset-0 bg-cover bg-center z-0"
-                    style={{ backgroundImage: `url(${service.image})` }}
-                  />
-                )}
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/60 z-10 group-hover:bg-black/70 transition-all duration-300" />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/60 z-10 group-hover:bg-black/70 transition-all duration-300" />
-
-                {/* Content */}
-                <div className="relative z-20 max-w-3xl px-6 text-center">
-                  <h2 className="text-5xl sm:text-6xl font-bold text-yellow-400 font-[var(--font-bree_serif)] mb-6 drop-shadow-md">
-                    {service.title}
-                  </h2>
-                  <p className="text-lg sm:text-xl text-gray-300 font-[var(--font-scope_one)] mb-8">
-                    {service.description}
-                  </p>
-                  <span className="inline-block text-yellow-300 text-sm font-[var(--font-kanit)] border-b border-yellow-300 hover:text-white hover:border-white transition-all duration-300">
-                    Learn More →
-                  </span>
-                </div>
-              </motion.div>
-            </Link>
-          );
-        })}
+              {/* Text */}
+              <div className="relative z-20 max-w-3xl px-6 text-center">
+                <h2 className="text-5xl sm:text-6xl font-bold text-yellow-400 font-[var(--font-bree_serif)] mb-6 drop-shadow-md">
+                  {service.title}
+                </h2>
+                <p className="text-lg sm:text-xl text-gray-300 font-[var(--font-scope_one)] mb-8">
+                  {service.description}
+                </p>
+                <span className="inline-block text-yellow-300 text-sm font-[var(--font-kanit)] border-b border-yellow-300 hover:text-white hover:border-white transition-all duration-300">
+                  Learn More →
+                </span>
+              </div>
+            </motion.div>
+          </Link>
+        ))}
       </section>
 
-      {/* Conditional Arrows */}
+      {/* Arrows */}
       {currentIndex > 1 && (
         <button
           className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/70 p-3 rounded-full border border-yellow-400 text-yellow-300"
@@ -158,7 +157,7 @@ const ServicesSection = () => {
         </button>
       )}
 
-      {/* Page Indicator */}
+      {/* Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/60 text-yellow-300 text-sm px-4 py-1 rounded-full border border-yellow-400 font-[var(--font-kanit)]">
         {currentIndex} / {services.length}
       </div>
