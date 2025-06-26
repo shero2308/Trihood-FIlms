@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -53,8 +53,8 @@ const ServicesSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(1);
 
-  // 👇 Refs for each card
-  const cardRefs = services.map(() => useRef(null));
+  // ✅ Properly declare refs and hooks with useMemo
+  const cardRefs = useMemo(() => services.map(() => React.createRef<HTMLDivElement>()), []);
   const inViews = cardRefs.map((ref) => useInView(ref, { once: false }));
 
   const updateIndexOnScroll = () => {
@@ -68,19 +68,14 @@ const ServicesSection = () => {
 
   useEffect(() => {
     const scrollElement = scrollRef.current;
-    if (scrollElement) {
-      scrollElement.addEventListener("scroll", updateIndexOnScroll);
-      return () => {
-        scrollElement.removeEventListener("scroll", updateIndexOnScroll);
-      };
-    }
+    scrollElement?.addEventListener("scroll", updateIndexOnScroll);
+    return () => scrollElement?.removeEventListener("scroll", updateIndexOnScroll);
   }, []);
 
-  const scroll = (direction: "left" | "right") => {
+  const scroll = (dir: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = window.innerWidth;
       scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
+        left: dir === "left" ? -window.innerWidth : window.innerWidth,
         behavior: "smooth",
       });
     }
@@ -99,9 +94,8 @@ const ServicesSection = () => {
               initial="hidden"
               animate={inViews[index] ? "visible" : "hidden"}
               variants={fadeInVariant}
-              className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group"
+              className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group cursor-pointer"
             >
-              {/* Background */}
               {service.video ? (
                 <video
                   autoPlay
@@ -157,7 +151,7 @@ const ServicesSection = () => {
         </button>
       )}
 
-      {/* Indicator */}
+      {/* Slide Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/60 text-yellow-300 text-sm px-4 py-1 rounded-full border border-yellow-400 font-[var(--font-kanit)]">
         {currentIndex} / {services.length}
       </div>
