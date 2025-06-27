@@ -15,31 +15,31 @@ const services = [
   {
     title: "Social Media Marketing",
     description: "Tailored strategy and content to grow your brand online.",
-    image: "/services/social-media.jpg",
+    video: "/services/social-media.jpg",
     link: "/services/social-media-marketing",
   },
   {
     title: "Communication Management",
     description: "Clear, compelling communication across every platform.",
-    image: "/services/communication.jpg",
+    video: "/services/communication.jpg",
     link: "/services/communication-management",
   },
   {
     title: "Strategic Planning",
     description: "Creative direction and content planning that aligns with your goals.",
-    image: "/services/strategy.jpg",
+    video: "/services/strategy.jpg",
     link: "/services/strategic-planning",
   },
   {
     title: "Branding Solutions",
     description: "Complete identity systems with a visual and narrative edge.",
-    image: "/services/branding.jpg",
+    video: "/services/branding.jpg",
     link: "/services/branding-solutions",
   },
   {
     title: "Humanitarian Services",
     description: "Impact-driven media for NGOs and social organizations.",
-    image: "/services/humanitarian.jpg",
+    video: "/services/humanitarian.jpg",
     link: "/services/humanitarian-services",
   },
 ];
@@ -57,7 +57,6 @@ const ServiceCard = ({
     title: string;
     description: string;
     video?: string;
-    image?: string;
     link: string;
   };
 }) => {
