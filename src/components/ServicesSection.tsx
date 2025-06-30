@@ -49,7 +49,6 @@ const fadeInVariant = {
   visible: { opacity: 1, y: 0, transition: { duration: 1 } },
 };
 
-// ✅ Subcomponent to safely use `useInView`
 const ServiceCard = ({
   service,
 }: {
@@ -72,7 +71,7 @@ const ServiceCard = ({
         variants={fadeInVariant}
         className="relative min-w-[100vw] h-screen snap-center flex items-center justify-center overflow-hidden group cursor-pointer"
       >
-        {service.video ? (
+        {service.video?.endsWith(".mp4") ? (
           <video
             autoPlay
             loop
@@ -85,7 +84,7 @@ const ServiceCard = ({
         ) : (
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
-            style={{ backgroundImage: `url(${service.image})` }}
+            style={{ backgroundImage: `url(${service.video})` }}
           />
         )}
 
@@ -146,7 +145,6 @@ const ServicesSection = () => {
         ))}
       </section>
 
-      {/* Arrows */}
       {currentIndex > 1 && (
         <button
           className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-black/50 hover:bg-black/70 p-3 rounded-full border border-yellow-400 text-yellow-300"
@@ -164,7 +162,6 @@ const ServicesSection = () => {
         </button>
       )}
 
-      {/* Slide Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 bg-black/60 text-yellow-300 text-sm px-4 py-1 rounded-full border border-yellow-400 font-[var(--font-kanit)]">
         {currentIndex} / {services.length}
       </div>
