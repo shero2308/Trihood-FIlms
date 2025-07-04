@@ -139,7 +139,7 @@ const HumanitarianServicesPage = () => {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "#fdb713" }}
           >
-            Let's Shine a Light on Humanity
+            Let&apos;s Shine a Light on Humanity
           </h2>
           <p className="text-gray-300 text-lg mb-6">
             Partner with Trihood to tell powerful stories that matter. We bring the heart. You bring the cause.
