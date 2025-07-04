@@ -9,7 +9,7 @@ const services = [
   {
     title: "Video Production",
     description: "From concept to screen—cinematic films, ads & visual storytelling.",
-    video: "/videos/production-reel.mp4",
+    video: "/videos/videoproduction.mp4",
     link: "/services/video-production",
   },
   {
