@@ -12,22 +12,22 @@ const fadeIn = {
 
 const services = [
   {
-    title: "Creative Strategy Development",
+    title: "Creative Vision Mapping",
     description:
-      "We align vision with storytelling—crafting message blueprints that elevate your brand and mission.",
-    image: "/images/strategy-development.jpg",
+      "We guide your message from concept to clarity—developing story frameworks that align with your goals.",
+    image: "/images/strategic-vision.jpg",
   },
   {
-    title: "Campaign Planning & Execution",
+    title: "Campaign Architecture",
     description:
-      "From pre-production briefs to final delivery, we design visual campaigns with purpose, clarity, and emotional impact.",
-    image: "/images/campaign-planning.jpg",
+      "Structure your video or brand campaign with intentional flow—audience, purpose, and emotional resonance in mind.",
+    image: "/images/campaign-architecture.jpg",
   },
   {
-    title: "Audience Insight & Positioning",
+    title: "Impact-Driven Messaging",
     description:
-      "We decode your audience and position your message where it resonates—through content that connects.",
-    image: "/images/audience-insight.jpg",
+      "We shape content that doesn’t just look good—it lands, connects, and inspires people to take action.",
+    image: "/images/impact-messaging.jpg",
   },
 ];
 
@@ -58,12 +58,12 @@ const StrategicPlanningPage = () => {
             transition={{ delay: 0.3, duration: 1 }}
             className="mt-4 text-lg md:text-xl max-w-2xl text-gray-300 mx-auto"
           >
-            Behind every visual masterpiece is a powerful strategy. We help you plan stories that move people.
+            Great storytelling starts with a great strategy. We help you map purpose to production.
           </motion.p>
         </div>
       </section>
 
-      {/* SERVICE SECTIONS */}
+      {/* SERVICE BLOCKS */}
       {services.map((item, idx) => (
         <section
           key={idx}
@@ -91,7 +91,7 @@ const StrategicPlanningPage = () => {
         </section>
       ))}
 
-      {/* MESSAGE SECTION */}
+      {/* STRATEGIC MESSAGE */}
       <section className="bg-black px-6 py-24 text-center">
         <motion.div
           initial="hidden"
@@ -105,16 +105,16 @@ const StrategicPlanningPage = () => {
             className="text-4xl font-semibold mb-6 tracking-tight"
             style={{ color: "#fdb713" }}
           >
-            Purpose-Driven Planning
+            Plan with Purpose
           </h3>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Great content starts with clarity. We collaborate with your team to turn your vision into actionable storyboards,
-            strategic scripts, and content that inspires action. Let&apos;s chart your path to creative success.
+            Whether you're launching a documentary, a nonprofit campaign, or a brand story, every shot begins with a strategy.
+            Let&apos;s collaborate on message, medium, and mission—then execute with cinematic impact.
           </p>
         </motion.div>
       </section>
 
-      {/* CTA SECTION */}
+      {/* CTA */}
       <section className="bg-gradient-to-b from-neutral-900 to-black px-6 py-24 text-center">
         <motion.div
           initial="hidden"
@@ -128,10 +128,10 @@ const StrategicPlanningPage = () => {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "#fdb713" }}
           >
-            Let&apos;s Strategize Your Next Big Idea
+            Let&apos;s Build a Story with Intention
           </h2>
           <p className="text-gray-300 text-lg mb-6">
-            Connect with Trihood Films to plan campaigns that captivate, communicate, and convert.
+            Partner with Trihood to design storytelling campaigns that move hearts and minds.
           </p>
           <Link
             href="/contact"
