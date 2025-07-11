@@ -12,31 +12,31 @@ const fadeIn = {
 
 const services = [
   {
-    title: "Creative Vision Mapping",
+    title: "Visual Identity Design",
     description:
-      "We guide your message from concept to clarity—developing story frameworks that align with your goals.",
-    image: "/images/strategic-vision.jpg",
+      "We create iconic, memorable visual systems—from logos to cinematic brand elements that reflect your ethos.",
+    image: "/images/branding-identity.jpg",
   },
   {
-    title: "Campaign Architecture",
+    title: "Brand Films & Storytelling",
     description:
-      "Structure your video or brand campaign with intentional flow—audience, purpose, and emotional resonance in mind.",
-    image: "/images/campaign-architecture.jpg",
+      "Your brand deserves more than a logo. We bring it to life through narrative-driven visuals and powerful storytelling.",
+    image: "/images/branding-storytelling.jpg",
   },
   {
-    title: "Impact-Driven Messaging",
+    title: "Content Systems & Templates",
     description:
-      "We shape content that doesn&apos;t just look good—it lands, connects, and inspires people to take action.",
-    image: "/images/impact-messaging.jpg",
+      "Cohesive content packages—social media, ad formats, motion graphics—designed to scale your presence consistently.",
+    image: "/images/branding-systems.jpg",
   },
 ];
 
-const StrategicPlanningPage = () => {
+const BrandingSolutionsPage = () => {
   return (
     <main className="bg-black text-white font-sans">
       <section
         className="relative h-screen w-full bg-cover bg-center flex items-center justify-center text-center px-6"
-        style={{ backgroundImage: "url('/images/strategic-hero.jpg')" }}
+        style={{ backgroundImage: "url('/images/branding-hero.jpg')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60" />
         <div className="relative z-10">
@@ -48,7 +48,7 @@ const StrategicPlanningPage = () => {
             className="text-4xl md:text-6xl font-bold tracking-tight"
             style={{ color: "#fdb713" }}
           >
-            Strategic Planning
+            Branding Solutions
           </motion.h1>
           <motion.p
             initial="hidden"
@@ -57,7 +57,7 @@ const StrategicPlanningPage = () => {
             transition={{ delay: 0.3, duration: 1 }}
             className="mt-4 text-lg md:text-xl max-w-2xl text-gray-300 mx-auto"
           >
-            Great storytelling starts with a great strategy. We help you map purpose to production.
+            Crafting cinematic brand experiences that are bold, emotional, and unforgettable.
           </motion.p>
         </div>
       </section>
@@ -102,11 +102,11 @@ const StrategicPlanningPage = () => {
             className="text-4xl font-semibold mb-6 tracking-tight"
             style={{ color: "#fdb713" }}
           >
-            Plan with Purpose
+            Build a Brand That Resonates
           </h3>
           <p className="text-gray-400 text-lg leading-relaxed">
-            Whether you&apos;re launching a documentary, a nonprofit campaign, or a brand story, every shot begins with a strategy.
-            Let&apos;s collaborate on message, medium, and mission—then execute with cinematic impact.
+            We don&apos;t just design visuals—we design emotions. From brand launches to rebrands, our creative team fuses strategy,
+            story, and visual craft into brands that leave a lasting cinematic impression.
           </p>
         </motion.div>
       </section>
@@ -124,10 +124,10 @@ const StrategicPlanningPage = () => {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: "#fdb713" }}
           >
-            Let&apos;s Build a Story with Intention
+            Let&apos;s Elevate Your Brand
           </h2>
           <p className="text-gray-300 text-lg mb-6">
-            Partner with Trihood to design storytelling campaigns that move hearts and minds.
+            Partner with Trihood to create a brand identity that lives beyond the screen—with soul, story, and strength.
           </p>
           <Link
             href="/contact"
@@ -137,7 +137,7 @@ const StrategicPlanningPage = () => {
               color: "black",
             }}
           >
-            Start a Project <ArrowRight className="ml-2 h-4 w-4" />
+            Start Branding <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </motion.div>
       </section>
@@ -145,4 +145,4 @@ const StrategicPlanningPage = () => {
   );
 };
 
-export default StrategicPlanningPage;
+export default BrandingSolutionsPage;
