@@ -34,7 +34,7 @@ const NAV_ITEMS = [
     ],
   },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/publishing-platforms", label: "Clients" },
+  { href: "/clients", label: "Clients" },
   { href: "/contact", label: "Join us" },
 ];
 

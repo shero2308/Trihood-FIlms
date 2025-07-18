@@ -1,12 +1,12 @@
 import Navbar from "@/components/Navbar";
-import DigitalAdFilmsPage from "@/components/DigitalAdFilmsPage";
+import DocumentaryCSRVideosPage from "@/components/DocumentaryCSRVideosPage";
 import Footer from "@/components/Footer";
 
-export default function DigitalAdFilms() {
+export default function DocumentaryCsrVideos() {
     return (
         <div>
             <Navbar />
-            <DigitalAdFilmsPage />
+            <DocumentaryCSRVideosPage />
             <Footer />
         </div>
     );

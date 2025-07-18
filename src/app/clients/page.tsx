@@ -1,13 +1,15 @@
 import Navbar from "@/components/Navbar";
-import DigitalAdFilmsPage from "@/components/DigitalAdFilmsPage";
 import Footer from "@/components/Footer";
+import ClientsPage from "@/components/ClientsPage";
 
-export default function DigitalAdFilms() {
+
+export default function Client() {
+
     return (
         <div>
             <Navbar />
-            <DigitalAdFilmsPage />
+              <ClientsPage />
             <Footer />
         </div>
     );
-}
+}   
