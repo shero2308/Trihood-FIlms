@@ -40,7 +40,7 @@ const Footer = () => {
           <ul className="text-sm text-gray-300 space-y-2">
             <li>Email: <a href="mailto:info@trihoodfilms.com" className="hover:text-[#fdb713] transition">info@trihoodfilms.com</a></li>
             <li>Phone: <a href="tel:+919999999999" className="hover:text-[#fdb713] transition">+91 99999 99999</a></li>
-            <li>Location: Mumbai, India</li>
+            <li>Location: Delhi, India</li>
           </ul>
         </div>
 
@@ -48,7 +48,7 @@ const Footer = () => {
         <div>
           <h4 className="text-[#fdb713] font-semibold text-lg mb-4 uppercase tracking-wider">Follow Us</h4>
           <div className="flex space-x-4 text-xl">
-            <a href="https://instagram.com" target="_blank" className="hover:text-[#fdb713] transition hover:scale-110">
+            <a href="https://www.instagram.com/trihoodfilms?igsh=d2c0bmJxMTA1Yno1" target="_blank" className="hover:text-[#fdb713] transition hover:scale-110">
               <FaInstagram />
             </a>
             <a href="https://youtube.com" target="_blank" className="hover:text-[#fdb713] transition hover:scale-110">

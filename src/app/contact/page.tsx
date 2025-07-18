@@ -95,6 +95,7 @@ export default function Contact() {
         setResult("❌ Submission failed. Try again.");
       }
     } catch (err) {
+      console.error("Contact form error:", err);
       setResult("❌ Network error. Please try again later.");
     } finally {
       setIsSending(false);
@@ -207,9 +208,8 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className={`border-2 rounded-lg p-3 w-full bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${
-                  errors.name ? "border-red-500" : "border-gray-600"
-                }`}
+                className={`border-2 rounded-lg p-3 w-full bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${errors.name ? "border-red-500" : "border-gray-600"
+                  }`}
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? "error-name" : undefined}
               />
@@ -235,9 +235,8 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className={`border-2 rounded-lg p-3 w-full bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${
-                  errors.email ? "border-red-500" : "border-gray-600"
-                }`}
+                className={`border-2 rounded-lg p-3 w-full bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${errors.email ? "border-red-500" : "border-gray-600"
+                  }`}
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "error-email" : undefined}
               />
@@ -263,9 +262,8 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Subject"
-                className={`border-2 rounded-lg p-3 w-full bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${
-                  errors.subject ? "border-red-500" : "border-gray-600"
-                }`}
+                className={`border-2 rounded-lg p-3 w-full bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${errors.subject ? "border-red-500" : "border-gray-600"
+                  }`}
                 aria-invalid={!!errors.subject}
                 aria-describedby={errors.subject ? "error-subject" : undefined}
               />
@@ -290,9 +288,8 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Tell us about your project..."
-                className={`border-2 rounded-lg p-3 w-full h-40 resize-none bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${
-                  errors.message ? "border-red-500" : "border-gray-600"
-                }`}
+                className={`border-2 rounded-lg p-3 w-full h-40 resize-none bg-black text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#fdb713] ${errors.message ? "border-red-500" : "border-gray-600"
+                  }`}
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? "error-message" : undefined}
               />
@@ -307,11 +304,10 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSending}
-              className={`rounded-lg p-3 w-full font-medium transition ${
-                isSending
+              className={`rounded-lg p-3 w-full font-medium transition ${isSending
                   ? "bg-gray-500 cursor-not-allowed"
                   : "bg-[#fdb713] text-black hover:scale-105 hover:shadow-lg"
-              }`}
+                }`}
             >
               {isSending ? "Sending..." : "Send"}
             </button>
@@ -320,13 +316,12 @@ export default function Contact() {
           {/* Submission Status Message */}
           {result && (
             <p
-              className={`mt-4 text-lg ${
-                result.startsWith("✅")
+              className={`mt-4 text-lg ${result.startsWith("✅")
                   ? "text-green-500"
                   : result.startsWith("❌")
-                  ? "text-red-500"
-                  : "text-gray-300"
-              }`}
+                    ? "text-red-500"
+                    : "text-gray-300"
+                }`}
             >
               {result}
             </p>
