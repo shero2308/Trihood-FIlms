@@ -75,6 +75,10 @@ export default function ClientsPage() {
           ))}
         </motion.div>
       </section>
+
+      {/* Footer */}
+      <div className="mt-24">
+      </div>
     </div>
   );
 }
