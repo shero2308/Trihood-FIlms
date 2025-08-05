@@ -41,27 +41,15 @@ const NAV_ITEMS = [
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [showNavbar, setShowNavbar] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    if (pathname === "/") {
-      const timer = setTimeout(() => setShowNavbar(true), 3500);
-      return () => clearTimeout(timer);
-    } else {
-      setShowNavbar(true);
-    }
-  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  if (!showNavbar) return null;
 
   return (
     <header
