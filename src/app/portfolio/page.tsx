@@ -12,6 +12,8 @@ const YOUTUBE_VIDEOS = [
   { id: "itli8isoXQQ", label: "Bhakti Music Shoot – Behind the Scenes" },
   { id: "7168SXKS0_c", label: "Corporate Brand Film Teaser" },
   { id: "UVeloGznItU", label: "NGO Impact Documentary Clip" },
+  { id: "a1b2c3d4e5f", label: "Wedding Cinematic Highlights" },
+  { id: "Ioy-EdqKT2Y", label: "TOF" },
 ];
 
 const GALLERY_IMAGES = [
