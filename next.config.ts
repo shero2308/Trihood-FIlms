@@ -3,9 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["yourcdn.com"], // allow external images
+    unoptimized: true, // 🔥 Important for next export
   },
-  output: "export", // important if deploying static build to Hostinger
+  output: "export",
 };
 
 export default nextConfig;
